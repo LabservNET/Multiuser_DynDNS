@@ -24,7 +24,7 @@ This Python script allows you to dynamically update **A-records** for multiple u
 ```
 project/
 │
-├── ddns_updater.py        # Main script
+├── app.py                 # Main script
 ├── config.json            # Configuration file
 ├── requirements.txt       # Python dependencies
 └── README.md              # This documentation
@@ -92,9 +92,9 @@ This file controls everything: user data, messages, IP sources, intervals.
 
 | Type       | Description                                      | Required Key         |
 |------------|--------------------------------------------------|----------------------|
-| `url`      | Use HTTP GET to get public IP                   | `url`               |
-| `command`  | Run a shell command to get IP                   | `command`           |
-| `resolve`  | Resolve a DNS hostname to get current IP        | `hostname`          |
+| `url`      | Use HTTP GET to get public IP                    | `url`                |
+| `command`  | Run a shell command to get IP                    | `command`            |
+| `resolve`  | Resolve a DNS hostname to get current IP         | `hostname`           |
 
 ---
 
@@ -102,7 +102,6 @@ This file controls everything: user data, messages, IP sources, intervals.
 
 ```json
 "messages": {
-  "server_running": "[DDNS] Server is now running...",
   "current_ip": "[{user}] Current IP: {new_ip}",
   "ip_change": "[{user}] IP changed: {last_ip} -> {new_ip}",
   "ip_mismatch": "[{user}] DNS record {name} has {old_ip}, expected {new_ip}",
