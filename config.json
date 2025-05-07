@@ -1,0 +1,31 @@
+{
+    "update_interval": 300,
+    "messages": {
+        "server_running": "[Pterodactyl Daemon]: Server is now running...",
+        "current_ip": "[{user}] The current IP is: {new_ip}",
+        "ip_change": "[{user}] IP change detected: {last_ip} -> {new_ip}",
+        "ip_mismatch": "[{user}] IP mismatch detected: {name} has {old_ip}, expected {new_ip}",
+        "ip_updated": "[{user}] IP for {name} has been updated to {new_ip}.",
+        "ip_correct": "[{user}] IP for {name} is already correct: {new_ip}",
+        "api_disabled": "[{user}] API is disabled. No changes made.",
+        "ip_unchanged": "[{user}] IP has not changed. No action required.",
+        "error": "[{user}] An error occurred: {error}"
+    },
+    "users": [
+        {
+            "name": "User1",
+            "enable_api": true,
+            "ip_source": {
+                "type": "resolve",
+                "hostname": "example.dyndns.org"
+            },
+            "cloudflare": {
+                "api_token": "example-api-token",
+                "zone_id": "example-zone-id"
+            },
+            "domains": [
+                "subdomain.example.com"
+            ]
+        }
+    ]
+}
